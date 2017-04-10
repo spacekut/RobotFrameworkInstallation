@@ -1,0 +1,39 @@
+# Robot Framework Installation
+
+Pre-requisites:
+- OS: Windows
+- Browser: Chrome
+- Project should be cloned: https://github.com/spacekut/CarmudiExam
+
+Python Installation:
+- Should have Python installed (version =2.7.9)
+Installer: https://www.python.org/downloads/release/python-279/
+
+Confguring PATH:
+1. Open Start > Control Panel > System and Security > System > Advanced System Settings > Environment Variables
+2. Edit System Variables "Path" value, click Edit and add ";C:\Python27;C:\Python27\Scripts" or where you installed python. Note that (;) is important as they separate different entries.
+3. Exit the dialog box with OK to save changes
+
+Installing virtualenv (NOTE: This is a tool to create isolated Python environments with its own directories and doesn't share other libraries with other virtualenv environments.)
+1. Open cmd and execute "pip install virtualenv"
+2. Execute "pip install virtualenvwrapper-win"
+3. Execute "mkvirtualenv virtual_env_name"
+4. To exit exit virtual env, execute "deactivate"
+5. To activate virtual env, execute "workon virtual_env_name"
+
+Installing Robot Framework and Pybot (NOTE: I've already added a setup.py where Robot Framework and all the needed libraries are set)
+1. Make sure you're in the project folder
+2. Execute "pip install -e ." (This is to install all needed packages for the program to run)
+3. Close command prompt to apply changes
+
+# Running Robot Script
+
+Pre-requisites:
+- In the command prompt, make sure you are in the folder where this project is cloned "cd path"
+- Make sure you are working on your virtualenv
+
+How to run robot script:
+1. Execute in command prompt "pybot -i FilteringByPrice ."
+
+-i means execute the script with tag "FilteringByPrice"
+. means search all the files in the current folder
